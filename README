@@ -1,0 +1,21 @@
+noir
+====
+
+Use noir to replay/plot objects in space. Currently used to assist with visual
+debugging of CodinGame artificial intelligence and optimization puzzles.
+
+input format
+------------
+
+Include a line "dimensions <W> <H>", which is the dimensions of the map. This is the original size. The sizing can be downscaled.
+
+Add a line "scale <S>" which is a float or integer to multiply dimensions by. Use fraction to make smaller.
+
+Start a new frame with "newframe"
+
+Then some lines such as follows:
+
+"circle 200,800 20 #00ff00"
+"circle 400,600 40 #ff0000"
+
+Only hex colors and circles for now.
