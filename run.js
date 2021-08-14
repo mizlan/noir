@@ -34,27 +34,27 @@ function redraw() {
   for (let [x, y, r, color] of frames) {
     console.log(x);
     ctx.strokeStyle = color;
-		ctx.fillStyle = hexToRGB(color, '0.5');
+    ctx.fillStyle = hexToRGB(color, '0.5');
     console.log(ctx.fillStyle);
     ctx.lineWidth = 5;
     ctx.beginPath();
-		ctx.arc(x * scale, y * scale, r * scale, 0, Math.PI * 2);
-		ctx.fill();
-		ctx.stroke();
-		ctx.closePath();
+    ctx.arc(x * scale, y * scale, r * scale, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
   }
 }
 
 let hexToRGB = (hex, alpha) => {
-	const r = parseInt(hex.slice(1, 3), 16);
-	const g = parseInt(hex.slice(3, 5), 16);
-	const b = parseInt(hex.slice(5, 7), 16);
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
 
-	if (alpha) {
-		return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-	} else {
-		return `rgba(${r}, ${g}, ${b})`;
-	}
+  if (alpha) {
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  } else {
+    return `rgba(${r}, ${g}, ${b})`;
+  }
 }
 
 const dimensions_pat = /dimensions (\d+) (\d+)/;
